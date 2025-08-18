@@ -2,12 +2,12 @@
 <html lang="pt-BR">
 <head>
   
-  <link rel="stylesheet" href="/PortFolio/CSS/MenuBar.css" />
+  <link rel="stylesheet" href="CSS/MenuBar.css" />
 
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>JayChouDev | Portfólio</title>
-  <link rel="stylesheet" href="/PortFolio/CSS/ProjetosStyle.css" />
+  <link rel="stylesheet" href="CSS/ProjetosStyle.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
@@ -66,7 +66,7 @@
   </main>
 
 <script>
-  fetch("/PortFolio/HTML/Menu.html")
+  fetch("HTML/Menu.html")
     .then(res => res.text())
     .then(data => {
       document.getElementById("menu").innerHTML = data;

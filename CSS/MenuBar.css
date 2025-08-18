@@ -1,0 +1,64 @@
+/* ==================== HEADER & NAV ==================== */
+header {
+  display: flex;
+  justify-content: center; /* centraliza horizontalmente */
+  align-items: center;
+  padding: 20px 40px;
+  background-color: rgba(15, 15, 15, 0.9);
+  backdrop-filter: blur(5px);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+nav ul {
+  display: flex;        /* horizontal */
+  gap: 20px;            /* espaço entre itens */
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+nav a {
+  color: #ffffff;
+  font-weight: 500;
+  padding: 8px 12px;
+  border-radius: 6px;
+  text-decoration: none; /* tira o sublinhado */
+  transition: color 0.3s, background-color 0.3s;
+}
+
+nav a:hover,
+nav a.active {
+  color: #00ffd5;
+  background-color: rgba(0, 255, 213, 0.1);
+}
+
+
+
+/* ==================== RESPONSIVO ==================== */
+@media (max-width: 768px) {
+  header {
+    padding: 16px 20px;
+  }
+
+  nav ul {
+    gap: 15px;
+  }
+
+  nav a {
+    font-size: 0.95rem;
+    padding: 8px 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  header {
+    padding: 12px 15px;
+  }
+
+  nav a {
+    font-size: 0.9rem;
+    padding: 6px 8px;
+  }
+}

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  
+  <link rel="stylesheet" href="/PortFolio/CSS/MenuBar.css" />
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>JayChouDev | Portfólio</title>
+  <link rel="stylesheet" href="/PortFolio/CSS/ProjetosStyle.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<div id="menu"></div>
+<body>
+
+
+  <main>
+    <section id="projetos">
+      <div class="container-principal">
+        <h2>Sejam Bem-vindos aos meus projetos pessoais</h2>
+        <div class="grade-projetos">
+
+          <div class="mini-card">
+            <a href="https://chat-bot-jay.vercel.app" target="_blank" rel="noopener noreferrer">
+              <img src="/PortFolio/Print-Icone/PrintChatBot.png" alt="ChatBot com API da Punter" />
+            </a>
+            <h3>Projeto 1</h3>
+            <p><span class="destaque">ChatBot</span>, com API da Punter.</p>
+            <a href="https://chat-bot-jay.vercel.app" target="_blank" rel="noopener noreferrer" class="btn">Ver Projeto</a>
+          </div>
+
+          <div class="mini-card">
+            <a href="https://bio-profile-jay-chou-dev.vercel.app" target="_blank" rel="noopener noreferrer">
+              <img src="/PortFolio/Print-Icone/PrintBio.png" alt="Mini Portfólio com HTML e CSS" />
+            </a>
+            <h3>Projeto 2</h3>
+            <p>Mini-Portfólio com HTML e CSS.</p>
+            <a href="https://bio-profile-jay-chou-dev.vercel.app" target="_blank" rel="noopener noreferrer" class="btn">Ver Projeto</a>
+          </div>
+
+          <div class="mini-card">
+            <a href="https://task-nine-opal.vercel.app" target="_blank" rel="noopener noreferrer">
+              <img src="/PortFolio/Print-Icone/PrintKanban.png" alt="Kanban de Estudos" />
+            </a>
+            <h3>Projeto 3</h3>
+            <p>Kanban para estudos (Afazeres).</p>
+            <a href="https://task-nine-opal.vercel.app" target="_blank" rel="noopener noreferrer" class="btn">Ver Projeto</a>
+          </div>
+
+          <div class="mini-card">
+            <a href="https://imcjs-beta.vercel.app" target="_blank" rel="noopener noreferrer">
+              <img src="/PortFolio/Print-Icone/PrintIMC.png" alt="Calculadora de IMC" />
+            </a>
+            <h3>Projeto 4</h3>
+            <p>Calculadora de IMC.</p>
+            <a href="https://imcjs-beta.vercel.app" target="_blank" rel="noopener noreferrer" class="btn">Ver Projeto</a>
+          </div>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+<script>
+  fetch("/PortFolio/HTML/Menu.html")
+    .then(res => res.text())
+    .then(data => {
+      document.getElementById("menu").innerHTML = data;
+
+      // Destacar a aba ativa
+      const links = document.querySelectorAll("#menu nav a");
+      links.forEach(link => {
+        if (link.href === window.location.href) {
+          link.classList.add("active");
+        }
+      });
+    });
+</script>
+
+
+
+
+  <footer>
+    <p>&copy; 2025 JayChouDev.</p>
+  </footer>
+
+</body>
+</html>

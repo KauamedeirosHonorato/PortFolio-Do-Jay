@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>JayChouDev | Contato</title>
+  <link rel="stylesheet" href="/PortFolio/CSS/MenuBar.css" />
+
+
+  <!-- CSS Principal -->
+  <link rel="stylesheet" href="/PortFolio/CSS/contatotyle.css" />
+
+  <!-- Font Awesome (Ícones) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+ <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<body>
+     <!-- Menu (HTML modular) -->
+  <div id="menu"></div>
+
+
+  <main>
+    <section class="contato-container" aria-label="Redes sociais do JayChouDev">
+      <img src="/PortFolio/Print-Icone/logojay.png" alt="Logo JayChouDev" class="logo-jay" loading="lazy" />
+      <h1>Minhas Redes</h1>
+      <div class="redes-sociais">
+        <a href="https://github.com/JayChouDev" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+          <i class="fa-brands fa-github"></i>
+        </a>
+        <a href="https://www.tiktok.com/@jaychoudev" target="_blank" rel="noopener noreferrer" aria-label="TikTok">
+          <i class="fa-brands fa-tiktok"></i>
+        </a>
+        <a href="https://www.instagram.com/jaychoudev/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+          <i class="fa-brands fa-instagram"></i>
+        </a>
+        <a href="https://www.linkedin.com/in/kauã-medeiros-honorato-3495a0344/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+          <i class="fa-brands fa-linkedin"></i>
+        </a>
+      </div>
+    </section>
+  </main>
+
+<script>
+fetch("/PortFolio/HTML/Menu.html")    .then(res => res.text())
+    .then(data => {
+      document.getElementById("menu").innerHTML = data;
+
+      // Destacar a aba ativa
+      const links = document.querySelectorAll("#menu nav a");
+      links.forEach(link => {
+        if (link.href === window.location.href) {
+          link.classList.add("active");
+        }
+      });
+    });
+</script>
+
+
+  <footer>
+    <p>&copy; 2025 JayChouDev.</p>
+  </footer>
+
+</body>
+</html>

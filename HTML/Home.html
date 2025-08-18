@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>JayChouDev | Portfólio</title>
+
+   <link rel="stylesheet" href="/PortFolio/CSS/MenuBar.css" />
+
+
+  <!-- CSS específico da página -->
+  <link rel="stylesheet" href="/PortFolio/CSS/HomeStyle.css" />
+
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- Fonte Poppins -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
+</head>
+
+<body>
+   <!-- Menu (HTML modular) -->
+  <div id="menu"></div>
+
+  <!-- Main -->
+  <main>
+    <!-- Sobre -->
+    <section id="sobre">
+      <img src="/PortFolio/Print-Icone/Foto-Perfil.jpg" alt="Foto do JayChouDev" />
+      <h1>JayChouDev</h1>
+      <p>
+        Sou desenvolvedor Full Stack focado em criar soluções funcionais e de impacto. Atuo com HTML, CSS e JavaScript no front-end,
+        e Java, Spring Boot e SQL no back-end. Apaixonado por desafios, busco escrever código limpo e evoluir constantemente na área tech.
+      </p>
+    </section>
+
+    <!-- Skills -->
+    <section id="skills">
+      <h2>Minhas Skills</h2>
+      <div class="skills-list">
+        <div class="skill-item">JavaScript</div>
+        <div class="skill-item">HTML5</div>
+        <div class="skill-item">CSS3</div>
+        <div class="skill-item">Java</div>
+        <div class="skill-item">SQL</div>
+        <div class="skill-item">Git & GitHub</div>
+        <div class="skill-item">KanBan</div>
+        <div class="skill-item">Canva</div>
+        <div class="skill-item">Spring Boot</div>
+      </div>
+      <a href="Projetos.html" class="btn-ver-projetos">Ver Projetos</a>
+    </section>
+  </main>
+
+  <script>
+fetch("/PortFolio/HTML/Menu.html")
+    .then(res => res.text())
+    .then(data => {
+      document.getElementById("menu").innerHTML = data;
+
+      // Destacar a aba ativa
+      const links = document.querySelectorAll("#menu nav a");
+      links.forEach(link => {
+        if (link.href === window.location.href) {
+          link.classList.add("active");
+        }
+      });
+    });
+</script>
+
+
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 JayChouDev.</p>
+  </footer>
+
+</body>
+</html>

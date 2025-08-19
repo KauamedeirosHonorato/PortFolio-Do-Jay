@@ -24,7 +24,7 @@
 
   <main>
     <section class="contato-container" aria-label="Redes sociais do JayChouDev">
-      <img src="Print-Icone/logojay.png" alt="Logo JayChouDev" class="logo-jay" loading="lazy" />
+      <img src="../Print-Icone/logojay.png" alt="Logo JayChouDev" class="logo-jay" loading="lazy" />
       <h1>Minhas Redes</h1>
       <div class="redes-sociais">
         <a href="https://github.com/JayChouDev" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
@@ -44,7 +44,7 @@
   </main>
 
   <script>
-    fetch("HTML/Menu.html")
+    fetch("../HTML/Menu.html")
       .then(res => res.text())
       .then(data => {
         document.getElementById("menu").innerHTML = data;

@@ -1,23 +1,28 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  
-  <link rel="stylesheet" href="CSS/MenuBar.css" />
-
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>JayChouDev | Portfólio</title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="CSS/MenuBar.css" />
   <link rel="stylesheet" href="CSS/ProjetosStyle.css" />
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <!-- Fonte Poppins -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
-
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 </head>
-<div id="menu"></div>
 <body>
 
+  <!-- Menu (HTML modular) -->
+  <div id="menu"></div>
 
+  <!-- Main -->
   <main>
     <section id="projetos">
       <div class="container-principal">
@@ -65,25 +70,24 @@
     </section>
   </main>
 
-<script>
-  fetch("HTML/Menu.html")
-    .then(res => res.text())
-    .then(data => {
-      document.getElementById("menu").innerHTML = data;
+  <!-- Script Menu -->
+  <script>
+    fetch("HTML/Menu.html")
+      .then(res => res.text())
+      .then(data => {
+        document.getElementById("menu").innerHTML = data;
 
-      // Destacar a aba ativa
-      const links = document.querySelectorAll("#menu nav a");
-      links.forEach(link => {
-        if (link.href === window.location.href) {
-          link.classList.add("active");
-        }
+        // Destacar a aba ativa
+        const links = document.querySelectorAll("#menu nav a");
+        links.forEach(link => {
+          if (link.href === window.location.href) {
+            link.classList.add("active");
+          }
+        });
       });
-    });
-</script>
+  </script>
 
-
-
-
+  <!-- Footer -->
   <footer>
     <p>&copy; 2025 JayChouDev.</p>
   </footer>

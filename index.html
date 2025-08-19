@@ -5,12 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>JayChouDev | Portfólio</title>
 
-   <link rel="stylesheet" href="CSS/MenuBar.css" />
-
-
-  <!-- CSS específico da página -->
+  <!-- CSS -->
+  <link rel="stylesheet" href="CSS/MenuBar.css" />
   <link rel="stylesheet" href="CSS/HomeStyle.css" />
-
 
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -22,7 +19,7 @@
 </head>
 
 <body>
-   <!-- Menu (HTML modular) -->
+  <!-- Menu modular -->
   <div id="menu"></div>
 
   <!-- Main -->
@@ -51,32 +48,29 @@
         <div class="skill-item">Canva</div>
         <div class="skill-item">Spring Boot</div>
       </div>
-      <a href="Projetos.html" class="btn-ver-projetos">Ver Projetos</a>
+      <a href="HTML/Projetos.html" class="btn-ver-projetos">Ver Projetos</a>
     </section>
   </main>
 
   <script>
-fetch("HTML/Menu.html")
-    .then(res => res.text())
-    .then(data => {
-      document.getElementById("menu").innerHTML = data;
+    fetch("HTML/Menu.html")
+      .then(res => res.text())
+      .then(data => {
+        document.getElementById("menu").innerHTML = data;
 
-      // Destacar a aba ativa
-      const links = document.querySelectorAll("#menu nav a");
-      links.forEach(link => {
-        if (link.href === window.location.href) {
-          link.classList.add("active");
-        }
+        // Destacar a aba ativa
+        const links = document.querySelectorAll("#menu nav a");
+        links.forEach(link => {
+          if (link.href === window.location.href) {
+            link.classList.add("active");
+          }
+        });
       });
-    });
-</script>
-
-
+  </script>
 
   <!-- Footer -->
   <footer>
     <p>&copy; 2025 JayChouDev.</p>
   </footer>
-
 </body>
 </html>

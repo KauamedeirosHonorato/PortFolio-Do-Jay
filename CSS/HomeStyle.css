@@ -8,58 +8,40 @@
 body {
   font-family: "Poppins", sans-serif;
   background: #0f0f0f;
-  color: #ffffff;
+  color: #fff;
   line-height: 1.6;
   overflow-x: hidden;
   position: relative;
 }
 
-a {
-  text-decoration: none;
-  color: inherit;
-}
+a { text-decoration: none; color: inherit; }
+ul { list-style: none; }
 
-ul {
-  list-style: none;
-}
-
-/* ==================== BG COM ANIMAÇÃO ==================== */
+/* ==================== BG LEVE & ANIMADO ==================== */
 body::before {
   content: "";
   position: fixed;
-  top: -10%;
-  left: -10%;
-  width: 150%;
-  height: 150%;
-  background: radial-gradient(circle, #6a00ff 0%, transparent 60%),
-              radial-gradient(circle, #00ffd5 0%, transparent 60%);
+  inset: 0;
+  background: radial-gradient(circle at 20% 20%, #6a00ff30, transparent),
+              radial-gradient(circle at 80% 80%, #00ffd530, transparent);
   background-repeat: no-repeat;
   background-size: 50% 50%;
-  background-position: left top, right bottom;
-  animation: moveBackground 20s linear infinite;
+  animation: moveBackground 25s linear infinite;
   z-index: -1;
-  opacity: 0.15;
   filter: blur(80px);
 }
 
 @keyframes moveBackground {
-  0%, 100% {
-    background-position: left top, right bottom;
-  }
-  50% {
-    background-position: center center, center center;
-  }
+  0%,100% { background-position: left top, right bottom; }
+  50% { background-position: center center, center center; }
 }
-
-/* ==================== HEADER & NAV ==================== */
-
 
 /* ==================== MAIN ==================== */
 main {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   min-height: 100vh;
   padding: 40px 20px;
   max-width: 1000px;
@@ -67,27 +49,22 @@ main {
   text-align: center;
 }
 
-/* ==================== TÍTULOS ==================== */
+/* ==================== TITULOS ==================== */
 h1 {
   font-size: 3rem;
   background: linear-gradient(90deg, #6a00ff, #00ffd5);
   -webkit-background-clip: text;
-  background-clip: text;
   -webkit-text-fill-color: transparent;
   margin-bottom: 20px;
 }
 
-h2 {
-  font-size: 2rem;
-  color: #ffffff;
-  margin-bottom: 40px;
-}
+h2 { font-size: 2rem; color: #fff; margin-bottom: 40px; }
 
 /* ==================== BOTÃO ==================== */
 .btn-ver-projetos {
   margin-top: 40px;
   background: linear-gradient(90deg, #00ffd5, #6a00ff);
-  color: #000000;
+  color: #000;
   padding: 16px 32px;
   font-size: 1.1rem;
   border-radius: 12px;
@@ -134,9 +111,10 @@ h2 {
 
 /* ==================== SKILLS ==================== */
 .skills-list {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-  gap: 20px;
+  display: flex;
+  flex-wrap: wrap;       /* Agrupa automaticamente em linhas */
+  justify-content: center; /* Centraliza horizontalmente */
+  gap: 12px;             /* Espaçamento entre skills */
   margin-top: 30px;
   padding: 0 20px;
   width: 100%;
@@ -144,139 +122,63 @@ h2 {
 }
 
 .skill-item {
+  flex: 0 1 auto;         /* Não cresce, apenas encolhe se precisar */
+  max-width: 150px;       /* Mantém limite de largura */
   background: rgba(255, 255, 255, 0.05);
-  padding: 14px 18px;
+  padding: 12px 15px;
   border-radius: 10px;
   text-align: center;
-  color: #ffffff;
+  color: #fff;
   font-weight: 600;
   backdrop-filter: blur(8px);
   border: 1px solid rgba(0, 255, 213, 0.2);
-  box-shadow: 0 0 15px rgba(106, 0, 255, 0.1);
-  transition: transform 0.4s, box-shadow 0.4s;
-  animation: floatSkill 4s ease-in-out infinite;
+  box-shadow: 0 0 10px rgba(106, 0, 255, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
   cursor: default;
+  line-height: 1.2;       /* Ajusta o espaçamento vertical interno */
 }
+
 
 .skill-item:hover {
-  transform: translateY(-8px) scale(1.05);
-  box-shadow: 0 0 25px rgba(0, 255, 213, 0.4);
-  cursor: pointer;
-}
-
-@keyframes floatSkill {
-  0%, 100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-4px);
-  }
+  transform: translateY(-5px) scale(1.05);
+  box-shadow: 0 0 20px rgba(0, 255, 213, 0.4);
 }
 
 /* ==================== RESPONSIVO ==================== */
-@media (max-width: 600px) {
-  header {
-    padding: 16px 20px;
-    flex-direction: column;
-    gap: 12px;
-  }
-
-  main {
-    padding: 20px;
-  }
-
-  h1 {
-    font-size: 2rem;
-  }
-
-  h2 {
-    font-size: 1.4rem;
-  }
-
-  #sobre img {
-    width: 120px;
-    height: 120px;
-  }
-
-  #sobre p {
-    font-size: 1rem;
-    padding: 0 10px;
-  }
-
-  .btn-ver-projetos {
-    font-size: 0.95rem;
-    padding: 12px 24px;
-    width: 100%;
-    max-width: 100%;
-  }
-
-  .skills-list {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 10px;
-    padding: 0 10px;
-  }
-
+@media(max-width:900px){
   .skill-item {
-    font-size: 0.9rem;
+    flex: 1 1 100px;
+    max-width: 130px;
     padding: 10px 12px;
+    font-size: 0.95rem;
   }
 }
 
-@media (max-width: 480px) {
-  body::before {
-    filter: blur(60px);
-    opacity: 0.6;
-  }
-.container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 1rem;
-}
-
-  header {
-    padding: 12px 15px;
-  }
-
-  nav a {
-    font-size: 0.95rem;
-    padding: 8px 10px;
-  }
-
-  h1 {
-    font-size: 1.8rem;
-  }
-
-  h2 {
-    font-size: 1.2rem;
-  }
-
-  #sobre p {
-    font-size: 0.95rem;
-  }
-
-  .btn-ver-projetos {
-    font-size: 0.9rem;
-    padding: 10px;
-  }
-
-  .skills-list {
-    grid-template-columns: 1fr;
-    padding: 0 10px;
-  }
-
+@media(max-width:600px){
   .skill-item {
-    font-size: 0.85rem;
-    padding: 10px;
+    flex: 1 1 90px;
+    max-width: 110px;
+    padding: 8px 10px;
+    font-size: 0.9rem;
   }
 }
+
+@media(max-width:480px){
+  .skill-item {
+    flex: 1 1 80px;
+    max-width: 100px;
+    padding: 6px 8px;
+    font-size: 0.85rem;
+  }
+}
+
+
 
 /* ==================== FOOTER ==================== */
 footer {
   background-color: transparent;
-  color: #ffffff;
+  color: #fff;
   text-align: center;
   padding: 20px;
-  position: relative;
-  bottom: 0;
   width: 100%;
 }

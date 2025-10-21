@@ -1,0 +1,175 @@
+/* ==================== VARIÁVEIS ==================== */
+:root {
+  --roxo-meia-noite: #5b0a91;
+  --azul-eletrico: #00d4ff;
+  --lilas-neon: #bb86fc;
+  --preto-profundo: #0d0d0d;
+  --texto-branco: #ffffff;
+  --texto-suave: #eeeeee;
+  --fundo-card: rgba(0, 0, 0, 0.5);
+  --borda-clara: rgba(255, 255, 255, 0.15);
+}
+
+/* ==================== ANIMAÇÃO GRADIENTE ==================== */
+@keyframes rgbGradient {
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+/* ==================== BODY ==================== */
+body {
+  background: linear-gradient(
+    270deg,
+    var(--roxo-meia-noite),
+    var(--azul-eletrico),
+    var(--lilas-neon),
+    var(--roxo-meia-noite)
+  );
+  background-size: 600% 600%;
+  animation: rgbGradient 20s ease infinite;
+}
+
+/* ==================== MAIN ==================== */
+main {
+  /* flex-grow é substituído por flex: 1 no Global.css */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 20px;
+  max-width: 1000px;
+  margin: 60px auto; /* Adiciona margem superior para espaçar do menu */
+}
+
+/* ==================== NOVA INTERFACE DE CONTATO ==================== */
+.contato-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+}
+
+.contato-logo {
+  width: 120px;
+  height: auto;
+  margin-bottom: 25px;
+  filter: drop-shadow(0 0 15px var(--azul-eletrico));
+  opacity: 0.9;
+}
+
+.contato-wrapper h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--texto-branco);
+  margin-bottom: 15px;
+  background: linear-gradient(90deg, var(--lilas-neon), var(--azul-eletrico));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.contato-wrapper p {
+  font-size: 1.1rem;
+  color: var(--texto-suave);
+  max-width: 600px;
+  margin-bottom: 40px;
+  line-height: 1.7;
+}
+
+.contato-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 25px;
+  width: 100%;
+  max-width: 800px;
+}
+
+.contato-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  padding: 30px;
+  background: var(--fundo-card);
+  border: 1px solid var(--borda-clara);
+  border-radius: 12px;
+  backdrop-filter: blur(10px);
+  color: var(--texto-branco);
+  font-size: 1.1rem;
+  font-weight: 600;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+  position: relative;
+}
+
+.contato-card i {
+  font-size: 2.5rem;
+  margin-bottom: 5px;
+}
+
+.contato-card:hover {
+  transform: translateY(-8px);
+  border-color: var(--azul-eletrico);
+  box-shadow: 0 8px 30px rgba(0, 212, 255, 0.3);
+}
+
+/* Card de E-mail especial */
+.email-card {
+  cursor: pointer;
+}
+
+.email-card .tooltip {
+  position: absolute;
+  bottom: 15px;
+  font-size: 0.8rem;
+  color: var(--texto-suave);
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 3px 8px;
+  border-radius: 5px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.email-card:hover .tooltip {
+  opacity: 1;
+}
+
+/* Links Sociais Secundários */
+.social-links {
+  display: flex;
+  gap: 30px;
+  margin-top: 50px;
+}
+
+.social-links a {
+  font-size: 1.8rem;
+  color: var(--texto-suave);
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.social-links a:hover {
+  color: var(--azul-eletrico);
+  transform: translateY(-5px);
+}
+
+/* ==================== FOOTER ==================== */
+footer {
+  margin-top: 60px;
+}
+
+/* ==================== RESPONSIVO ==================== */
+@media (max-width: 480px) {
+  .contato-wrapper h1 {
+    font-size: 2rem;
+  }
+  .contato-wrapper p {
+    font-size: 1rem;
+  }
+  .contato-grid {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+}

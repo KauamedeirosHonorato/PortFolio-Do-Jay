@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JayChouDev | Projetos</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../CSS/Global.css" />
+    <link rel="stylesheet" href="../CSS/MenuBar.css" />
+    <link rel="stylesheet" href="../CSS/ProjetosStyle.css" />
+
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+
+    <!-- Fonte Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- Menu Flutuante -->
+    <header>
+      <nav>
+        <ul>
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="Projetos.html" class="active">Projetos</a></li>
+          <li><a href="Contato.html">Contato</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- Main -->
+    <main>
+      <section id="projetos">
+        <div class="container-principal">
+          <h2>Meus Projetos Pessoais</h2>
+          <div class="grade-projetos">
+            <!-- Card 1 -->
+            <div class="mini-card">
+              <img
+                src="../Print-Icone/PrintChatBot.png"
+                alt="ChatBot com API da Punter"
+              />
+              <h3>ChatBot</h3>
+              <p>Projeto com <span class="destaque">API da Punter</span></p>
+              <div class="card-buttons">
+                <a
+                  href="https://chat-bot-jay.vercel.app"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="btn"
+                  >Ver Projeto</a
+                >
+                <a
+                  href="#"
+                  class="btn btn-secondary readme-btn"
+                  role="button"
+                  data-title="ChatBot com API da Punter"
+                  data-description="Este projeto é um chatbot interativo que consome a API da Punter para fornecer respostas inteligentes. O objetivo era criar uma interface de conversação fluida e responsiva."
+                  data-obstacles="O principal desafio foi lidar com as requisições assíncronas para a API, garantindo que a interface não travasse enquanto aguardava a resposta. A implementação de um estado de 'carregando' e o tratamento de erros de rede foram cruciais para a experiência do usuário."
+                  >README</a
+                >
+              </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="mini-card">
+              <img src="../Print-Icone/PrintBio.png" alt="Mini Portfólio" />
+              <h3>Mini Portfólio</h3>
+              <p>HTML & CSS puro</p>
+              <div class="card-buttons">
+                <a
+                  href="https://bio-profile-jay-chou-dev.vercel.app"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="btn"
+                  >Ver Projeto</a
+                >
+                <a
+                  href="#"
+                  class="btn btn-secondary readme-btn"
+                  role="button"
+                  data-title="Mini Portfólio"
+                  data-description="Uma página de 'link na bio' criada com foco em design e responsividade, utilizando apenas HTML e CSS. O objetivo era criar uma apresentação visualmente agradável e direta das minhas redes e habilidades."
+                  data-obstacles="O desafio foi garantir que o layout se adaptasse perfeitamente a uma ampla gama de tamanhos de tela, especialmente em dispositivos móveis, sem o uso de frameworks. O controle fino sobre o Flexbox e a utilização de gradientes de forma performática foram pontos de aprendizado."
+                  >README</a
+                >
+              </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="mini-card">
+              <img
+                src="../Print-Icone/PrintKanban.png"
+                alt="Kanban de Estudos"
+              />
+              <h3>Kanban</h3>
+              <p>Organização de estudos</p>
+              <div class="card-buttons">
+                <a
+                  href="https://task-nine-opal.vercel.app"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="btn"
+                  >Ver Projeto</a
+                >
+                <a
+                  href="#"
+                  class="btn btn-secondary readme-btn"
+                  role="button"
+                  data-title="Kanban de Estudos"
+                  data-description="Uma ferramenta de organização pessoal no estilo Kanban, que permite criar, mover e deletar tarefas entre colunas ('A Fazer', 'Fazendo', 'Feito'). O projeto foi desenvolvido para praticar a manipulação do DOM com JavaScript."
+                  data-obstacles="A lógica de arrastar e soltar (drag and drop) foi o maior obstáculo. Implementar os eventos corretamente para capturar o início do arraste, a passagem sobre uma nova coluna e a soltura do elemento, atualizando a estrutura de dados de forma consistente, exigiu uma depuração cuidadosa."
+                  >README</a
+                >
+              </div>
+            </div>
+
+            <!-- Card 4 -->
+            <div class="mini-card">
+              <img src="../Print-Icone/PrintIMC.png" alt="Calculadora de IMC" />
+              <h3>IMC</h3>
+              <p>
+                Validação de dados em <span class="destaque">JavaScript</span>
+              </p>
+              <div class="card-buttons">
+                <a
+                  href="https://imcjs-beta.vercel.app"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="btn"
+                  >Ver Projeto</a
+                >
+                <a
+                  href="#"
+                  class="btn btn-secondary readme-btn"
+                  role="button"
+                  data-title="Calculadora de IMC"
+                  data-description="Uma aplicação simples para calcular o Índice de Massa Corporal (IMC) com base no peso e altura do usuário. O projeto foca na validação de entradas e na apresentação clara dos resultados."
+                  data-obstacles="Garantir que a validação dos campos de entrada fosse robusta, impedindo o cálculo com dados inválidos (como texto ou números negativos) e fornecendo feedback claro ao usuário, foi um desafio importante. A formatação correta dos números (usando ponto ou vírgula) também precisou de atenção."
+                  >README</a
+                >
+              </div>
+            </div>
+
+            <!-- Card 5 -->
+            <div class="mini-card">
+              <img src="../Print-Icone/Cineverse.png" alt="CineVerse" />
+              <h3>CineVerse</h3>
+              <p>Uma interface que busca Filmes, Series e Games</p>
+              <div class="card-buttons">
+                <a
+                  href="https://frontend-3rnzxa0tf-jaychous-projects-3e053209.vercel.app"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="btn"
+                  >Ver Projeto</a
+                >
+                <a
+                  href="#"
+                  class="btn btn-secondary readme-btn"
+                  role="button"
+                  data-title="CineVerse"
+                  data-description="CineVerse é uma plataforma que utiliza uma API externa (como a OMDB) para buscar e exibir informações sobre filmes, séries e jogos. O projeto foi construído com React no front-end e Java no back-end, permitindo que o usuário pesquise por um título e veja os resultados em uma grade."
+                  data-obstacles="O principal desafio técnico foi a paginação dos resultados. Quando uma busca retorna centenas de itens, carregar todos de uma vez é inviável. Implementar uma lógica de 'carregar mais' ou de páginas para buscar e exibir os resultados sob demanda foi essencial para a performance da aplicação."
+                  >README</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Modal README -->
+    <div id="readme-modal" class="modal-overlay">
+      <div class="modal-content">
+        <button id="close-modal" class="close-button">&times;</button>
+        <h3 id="modal-title"></h3>
+        <h4>O que o projeto faz?</h4>
+        <p id="modal-description"></p>
+        <h4>Quais foram os obstáculos?</h4>
+        <p id="modal-obstacles"></p>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+      <p>&copy; 2025 JayChouDev.</p>
+    </footer>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const readmeButtons = document.querySelectorAll(".readme-btn");
+        const modal = document.getElementById("readme-modal");
+        const closeModalBtn = document.getElementById("close-modal");
+        const modalTitle = document.getElementById("modal-title");
+        const modalDescription = document.getElementById("modal-description");
+        const modalObstacles = document.getElementById("modal-obstacles");
+
+        readmeButtons.forEach((button) => {
+          button.addEventListener("click", () => {
+            e.preventDefault(); // Previne o comportamento padrão do link '#'
+            modalTitle.textContent = button.dataset.title;
+            modalDescription.textContent = button.dataset.description;
+            modalObstacles.textContent = button.dataset.obstacles;
+            modal.classList.add("active");
+          });
+        });
+
+        const closeModal = () => {
+          modal.classList.remove("active");
+        };
+
+        closeModalBtn.addEventListener("click", closeModal);
+        modal.addEventListener("click", (e) => {
+          if (e.target === modal) {
+            closeModal();
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

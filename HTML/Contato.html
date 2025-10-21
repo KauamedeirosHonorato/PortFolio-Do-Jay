@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>JayChouDev | Contato</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../CSS/Global.css" />
+    <link rel="stylesheet" href="../CSS/MenuBar.css" />
+    <link rel="stylesheet" href="../CSS/contatotyle.css" />
+
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+
+    <!-- Fonte Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- Menu Flutuante -->
+    <header>
+      <nav>
+        <ul>
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="Projetos.html">Projetos</a></li>
+          <li><a href="Contato.html" class="active">Contato</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <div class="contato-wrapper">
+        <img
+          src="../Print-Icone/logojay.png"
+          alt="Logo JayChouDev"
+          class="contato-logo"
+        />
+        <h1>Conecte-se Comigo</h1>
+        <p>
+          Estou em busca de novas oportunidades e adoraria conversar sobre como
+          minhas habilidades podem agregar valor à sua equipe.
+        </p>
+
+        <div class="contato-grid" id="primary-contacts">
+          <!-- LinkedIn -->
+          <a
+            href="https://www.linkedin.com/in/kauã-medeiros-honorato-3495a0344/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="contato-card"
+          >
+            <i class="fa-brands fa-linkedin"></i>
+            <span>LinkedIn</span>
+          </a>
+          <!-- E-mail -->
+          <div
+            id="email-card"
+            class="contato-card email-card"
+            data-email="seu-email-aqui@exemplo.com"
+            title="Clique para copiar o e-mail"
+          >
+            <i class="fa-solid fa-envelope"></i>
+            <span>E-mail</span>
+            <small class="tooltip">Clique para copiar</small>
+          </div>
+          <!-- GitHub -->
+          <a
+            href="https://github.com/JayChouDev"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="contato-card"
+          >
+            <i class="fa-brands fa-github"></i>
+            <span>GitHub</span>
+          </a>
+        </div>
+
+        <div class="social-links">
+          <!-- TikTok -->
+          <a
+            href="https://www.tiktok.com/@jaychoudev"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="TikTok"
+          >
+            <i class="fa-brands fa-tiktok"></i>
+          </a>
+          <!-- Instagram -->
+          <a
+            href="https://www.instagram.com/jaychoudev/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Instagram"
+          >
+            <i class="fa-brands fa-instagram"></i>
+          </a>
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      <p>&copy; 2025 JayChouDev.</p>
+    </footer>
+
+    <script>
+      const emailCard = document.getElementById("email-card");
+      const tooltip = emailCard.querySelector(".tooltip");
+
+      emailCard.addEventListener("click", () => {
+        const email = emailCard.getAttribute("data-email");
+        navigator.clipboard.writeText(email).then(() => {
+          tooltip.textContent = "E-mail Copiado!";
+          setTimeout(() => {
+            tooltip.textContent = "Clique para copiar";
+          }, 2000);
+        });
+      });
+    </script>
+  </body>
+</html>

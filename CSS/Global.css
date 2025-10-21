@@ -1,0 +1,35 @@
+/* ==================== RESET & ESTILOS GLOBAIS ==================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: #000;
+  color: #fff;
+  line-height: 1.6;
+  overflow-x: hidden;
+  position: relative;
+  min-height: 100svh; /* 'small viewport height' para melhor compatibilidade mobile */
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1; /* Garante que o main ocupe o espaço disponível, empurrando o footer para baixo */
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+}

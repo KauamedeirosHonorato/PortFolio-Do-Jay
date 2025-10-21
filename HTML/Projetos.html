@@ -62,9 +62,9 @@
                   href="#"
                   class="btn btn-secondary readme-btn"
                   role="button"
-                  data-title="ChatBot com API da Punter"
-                  data-description="Este projeto é um chatbot interativo que consome a API da Punter para fornecer respostas inteligentes. O objetivo era criar uma interface de conversação fluida e responsiva."
-                  data-obstacles="O principal desafio foi lidar com as requisições assíncronas para a API, garantindo que a interface não travasse enquanto aguardava a resposta. A implementação de um estado de 'carregando' e o tratamento de erros de rede foram cruciais para a experiência do usuário."
+                  data-title="ChatBot"
+                  data-description="Um chatbot interativo que consome a API da Punter para fornecer respostas inteligentes, com o objetivo de criar uma interface de conversação fluida e responsiva."
+                  data-obstacles="O principal desafio foi gerenciar requisições assíncronas à API, assegurando que a interface permanecesse responsiva durante a espera. A implementação de um estado de 'carregando' e o tratamento robusto de erros de rede foram essenciais para a experiência do usuário."
                   >README</a
                 >
               </div>
@@ -88,8 +88,8 @@
                   class="btn btn-secondary readme-btn"
                   role="button"
                   data-title="Mini Portfólio"
-                  data-description="Uma página de 'link na bio' criada com foco em design e responsividade, utilizando apenas HTML e CSS. O objetivo era criar uma apresentação visualmente agradável e direta das minhas redes e habilidades."
-                  data-obstacles="O desafio foi garantir que o layout se adaptasse perfeitamente a uma ampla gama de tamanhos de tela, especialmente em dispositivos móveis, sem o uso de frameworks. O controle fino sobre o Flexbox e a utilização de gradientes de forma performática foram pontos de aprendizado."
+                  data-description="Uma página de 'link na bio' focada em design e responsividade, desenvolvida exclusivamente com HTML e CSS. O objetivo foi criar uma apresentação visualmente agradável e direta das minhas redes sociais e habilidades."
+                  data-obstacles="O desafio consistiu em assegurar a adaptação perfeita do layout a diversas telas, especialmente em dispositivos móveis, sem o uso de frameworks. O domínio do Flexbox e a otimização de gradientes para performance foram aprendizados chave."
                   >README</a
                 >
               </div>
@@ -115,9 +115,9 @@
                   href="#"
                   class="btn btn-secondary readme-btn"
                   role="button"
-                  data-title="Kanban de Estudos"
-                  data-description="Uma ferramenta de organização pessoal no estilo Kanban, que permite criar, mover e deletar tarefas entre colunas ('A Fazer', 'Fazendo', 'Feito'). O projeto foi desenvolvido para praticar a manipulação do DOM com JavaScript."
-                  data-obstacles="A lógica de arrastar e soltar (drag and drop) foi o maior obstáculo. Implementar os eventos corretamente para capturar o início do arraste, a passagem sobre uma nova coluna e a soltura do elemento, atualizando a estrutura de dados de forma consistente, exigiu uma depuração cuidadosa."
+                  data-title="Kanban de Tarefas"
+                  data-description="Ferramenta de organização pessoal estilo Kanban, permitindo criar, mover e deletar tarefas entre colunas ('A Fazer', 'Fazendo', 'Feito'). Desenvolvido para praticar manipulação do DOM com JavaScript."
+                  data-obstacles="A lógica de arrastar e soltar (drag and drop) representou o maior desafio. A implementação correta dos eventos para iniciar, arrastar e soltar elementos, e a atualização consistente da estrutura de dados, exigiu depuração minuciosa."
                   >README</a
                 >
               </div>
@@ -143,8 +143,8 @@
                   class="btn btn-secondary readme-btn"
                   role="button"
                   data-title="Calculadora de IMC"
-                  data-description="Uma aplicação simples para calcular o Índice de Massa Corporal (IMC) com base no peso e altura do usuário. O projeto foca na validação de entradas e na apresentação clara dos resultados."
-                  data-obstacles="Garantir que a validação dos campos de entrada fosse robusta, impedindo o cálculo com dados inválidos (como texto ou números negativos) e fornecendo feedback claro ao usuário, foi um desafio importante. A formatação correta dos números (usando ponto ou vírgula) também precisou de atenção."
+                  data-description="Aplicação simples para calcular o Índice de Massa Corporal (IMC) com base no peso e altura do usuário, focando na validação de entradas e na apresentação clara dos resultados."
+                  data-obstacles="O principal desafio foi garantir uma validação robusta dos campos de entrada, impedindo cálculos com dados inválidos (texto, números negativos) e fornecendo feedback claro. A correta formatação dos números (ponto/vírgula) também demandou atenção."
                   >README</a
                 >
               </div>
@@ -168,8 +168,8 @@
                   class="btn btn-secondary readme-btn"
                   role="button"
                   data-title="CineVerse"
-                  data-description="CineVerse é uma plataforma que utiliza uma API externa (como a OMDB) para buscar e exibir informações sobre filmes, séries e jogos. O projeto foi construído com React no front-end e Java no back-end, permitindo que o usuário pesquise por um título e veja os resultados em uma grade."
-                  data-obstacles="O principal desafio técnico foi a paginação dos resultados. Quando uma busca retorna centenas de itens, carregar todos de uma vez é inviável. Implementar uma lógica de 'carregar mais' ou de páginas para buscar e exibir os resultados sob demanda foi essencial para a performance da aplicação."
+                  data-description="CineVerse é uma plataforma que consome uma API externa (ex: OMDB) para buscar e exibir informações sobre filmes, séries e jogos. Desenvolvido com React (front-end) e Java (back-end), permite ao usuário pesquisar títulos e visualizar resultados em grade."
+                  data-obstacles="O principal desafio técnico foi a paginação dos resultados. Para evitar o carregamento inviável de centenas de itens, foi essencial implementar uma lógica de 'carregar mais' ou de paginação para buscar e exibir dados sob demanda, otimizando a performance da aplicação."
                   >README</a
                 >
               </div>
@@ -206,7 +206,7 @@
         const modalObstacles = document.getElementById("modal-obstacles");
 
         readmeButtons.forEach((button) => {
-          button.addEventListener("click", () => {
+          button.addEventListener("click", (e) => {
             e.preventDefault(); // Previne o comportamento padrão do link '#'
             modalTitle.textContent = button.dataset.title;
             modalDescription.textContent = button.dataset.description;

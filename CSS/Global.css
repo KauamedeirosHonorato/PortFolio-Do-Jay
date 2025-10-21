@@ -33,3 +33,12 @@ a {
 ul {
   list-style: none;
 }
+
+/* ==================== FOOTER ==================== */
+footer {
+  background-color: transparent;
+  color: #fff;
+  text-align: center;
+  padding: 20px;
+  width: 100%;
+}

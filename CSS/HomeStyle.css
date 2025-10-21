@@ -131,15 +131,6 @@ h2 {
   box-shadow: 0 6px 20px rgba(0, 255, 213, 0.6);
 }
 
-/* ==================== FOOTER ==================== */
-footer {
-  background-color: transparent;
-  color: #fff;
-  text-align: center;
-  padding: 20px;
-  width: 100%;
-}
-
 /* ==================== RESPONSIVO ==================== */
 @media (max-width: 768px) {
   h1 {

@@ -28,7 +28,13 @@
     <!-- Menu Flutuante -->
     <header>
       <nav>
-        <ul>
+        <div class="logo">
+          <a href="../index.html">JayChouDev</a>
+        </div>
+        <div class="menu-icon">
+          <i class="fa-solid fa-bars"></i>
+        </div>
+        <ul class="nav-links">
           <li><a href="../index.html">Home</a></li>
           <li><a href="Projetos.html" class="active">Projetos</a></li>
           <li><a href="Contato.html">Contato</a></li>
@@ -43,6 +49,34 @@
           <h2>Meus Projetos Pessoais</h2>
           <div class="grade-projetos">
             <!-- Card 1 -->
+            <div class="mini-card">
+              <img
+                src="../Print-Icone/Scatambulo.png"
+                alt="Site E-Commerce Scatambulo"
+              />
+              <h3>Site E-Commerce</h3>
+              <p>Projeto feito com  <span class="destaque"></span>Html, TailWind, JavaScript </p>
+              <div class="card-buttons">
+                <a
+                  href="https://www.angelascatambulo.shop/menu.html"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="btn"
+                  >Ver Projeto</a
+                >
+                <a
+                  href="#"
+                  class="btn btn-secondary readme-btn"
+                  role="button"
+                  data-title="Scatambulo"
+                  data-description="Um e-commerce de bolos artesanais, focado em uma experiência de usuário intuitiva e um design atraente."
+                  data-obstacles="O maior desafio foi desenvolver um carrinho de compras dinâmico e responsivo, garantindo que a experiência de compra fosse fluida em todos os dispositivos. A integração com api do whatsApp foi a etapa de mais atenção pois ela tinha que ser sobrescrita em todos os modais."
+                  >README</a
+                >
+              </div>
+            </div>
+
+            <!-- Card 2 -->
             <div class="mini-card">
               <img
                 src="../Print-Icone/PrintChatBot.png"
@@ -196,6 +230,7 @@
       <p>&copy; 2025 JayChouDev.</p>
     </footer>
 
+    <script src="../menu.js"></script>
     <script>
       document.addEventListener("DOMContentLoaded", () => {
         const readmeButtons = document.querySelectorAll(".readme-btn");

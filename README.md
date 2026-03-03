@@ -63,4 +63,3 @@ Pronto! O site funciona apenas no front-end, sem necessidade de servidor.
 
 ---
 
-Sinta-se livre para modificar e aprimorar este README conforme evoluir seu projeto!

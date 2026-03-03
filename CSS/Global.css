@@ -121,11 +121,128 @@ ul {
   transform: translateY(0);
 }
 
+/* ==================== PAGE TRANSITIONS ==================== */
+body {
+  opacity: 1;
+  transition: opacity 0.5s ease;
+}
+
+body.fade-out {
+  opacity: 0;
+}
+
+/* ==================== PREMIUM LOADER ==================== */
+#loader-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(10, 10, 12, 0.95);
+  backdrop-filter: blur(25px);
+  -webkit-backdrop-filter: blur(25px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10001;
+  transition: opacity 0.6s ease, visibility 0.6s ease;
+}
+
+#loader-wrapper.hidden {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.loader-content {
+  font-family: 'Outfit', sans-serif;
+  font-size: 4rem;
+  font-weight: 700;
+  color: var(--accent-color);
+  display: flex;
+  gap: 10px;
+  filter: drop-shadow(0 0 15px var(--accent-color));
+}
+
+.bracket-left {
+  animation: bracketMoveLeft 1.5s ease-in-out infinite alternate;
+}
+
+.bracket-right {
+  animation: bracketMoveRight 1.5s ease-in-out infinite alternate;
+}
+
+.slash {
+  animation: slashSpin 1.5s ease-in-out infinite;
+  display: inline-block;
+  color: var(--accent-blue);
+}
+
+@keyframes bracketMoveLeft {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-25px);
+  }
+}
+
+@keyframes bracketMoveRight {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(25px);
+  }
+}
+
+@keyframes slashSpin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* ==================== SOCIAL FOOTER ==================== */
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  margin-top: 15px;
+  padding-bottom: 20px;
+}
+
+.social-icon {
+  color: #fff;
+  font-size: 1.5rem;
+  transition: all 0.3s ease;
+  display: inline-block;
+  animation: float 3s ease-in-out infinite;
+}
+
+.social-icon:nth-child(2) {
+  animation-delay: 0.3s;
+}
+
+.social-icon:nth-child(3) {
+  animation-delay: 0.6s;
+}
+
+.social-icon:hover {
+  color: var(--accent-color);
+  transform: translateY(-5px) scale(1.2);
+  filter: drop-shadow(0 0 8px var(--accent-color));
+}
+
 /* ==================== FOOTER ==================== */
 footer {
   background-color: transparent;
   color: #fff;
   text-align: center;
-  padding: 20px;
+  padding: 40px 20px;
   width: 100%;
 }

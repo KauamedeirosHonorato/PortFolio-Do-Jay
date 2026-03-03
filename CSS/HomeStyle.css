@@ -1,24 +1,25 @@
-/* ==================== BG LEVE & ANIMADO ==================== */
 body::before {
   content: "";
   position: fixed;
   inset: 0;
-  background: radial-gradient(circle at 20% 20%, #6a00ff30, transparent),
-    radial-gradient(circle at 80% 80%, #00ffd530, transparent);
+  background:
+    radial-gradient(circle at 10% 10%, rgba(106, 0, 255, 0.15), transparent 40%),
+    radial-gradient(circle at 90% 90%, rgba(0, 255, 213, 0.15), transparent 40%),
+    radial-gradient(circle at 50% 50%, rgba(10, 132, 255, 0.05), transparent 60%);
   background-repeat: no-repeat;
-  background-size: 50% 50%;
-  animation: moveBackground 25s linear infinite;
+  background-size: 100% 100%;
+  animation: moveBackground 20s ease-in-out infinite alternate;
   z-index: -1;
-  filter: blur(80px);
+  filter: blur(100px);
 }
 
 @keyframes moveBackground {
-  0%,
-  100% {
-    background-position: left top, right bottom;
+  0% {
+    transform: scale(1);
   }
-  50% {
-    background-position: center center, center center;
+
+  100% {
+    transform: scale(1.1);
   }
 }
 
@@ -27,7 +28,8 @@ main {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 40px 20px;
+  padding: 100px 20px 40px;
+  /* Top padding adjusted for floating menu */
   max-width: 1000px;
   margin: auto;
   text-align: center;
@@ -35,17 +37,21 @@ main {
 
 /* ==================== TÍTULOS ==================== */
 h1 {
-  font-size: 3rem;
-  background: linear-gradient(90deg, #6a00ff, #00ffd5);
+  font-size: clamp(2.5rem, 8vw, 4rem);
+  background: linear-gradient(90deg, var(--accent-color), var(--accent-blue));
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
   margin-bottom: 20px;
+  font-weight: 800;
+  letter-spacing: -1px;
 }
 
 h2 {
   font-size: 2rem;
   color: #fff;
   margin-bottom: 40px;
+  font-weight: 700;
 }
 
 /* ==================== SOBRE ==================== */
@@ -53,82 +59,106 @@ h2 {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 60px;
+  margin-top: 40px;
   padding: 0 10px;
 }
 
 #sobre img {
-  width: 160px;
-  height: 160px;
+  width: 180px;
+  height: 180px;
   border-radius: 50%;
   object-fit: cover;
-  border: 3px solid #00ffd5;
-  box-shadow: 0 0 20px rgba(106, 0, 255, 0.5);
-  margin-bottom: 20px;
+  border: 4px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 0 30px rgba(0, 255, 213, 0.3);
+  margin-bottom: 25px;
+  transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+#sobre img:hover {
+  transform: scale(1.05) rotate(5deg);
+  border-color: var(--accent-color);
 }
 
 #sobre p {
-  max-width: 600px;
-  margin-bottom: 30px;
-  font-size: 1.1rem;
-  text-align: center;
+  max-width: 700px;
+  margin-bottom: 40px;
+  font-size: 1.2rem;
+  color: var(--text-secondary);
+  line-height: 1.8;
 }
 
 /* ==================== SKILLS ==================== */
 .skills-list {
   display: flex;
-  flex-wrap: wrap; /* Agrupa automaticamente em linhas */
+  flex-wrap: wrap;
   justify-content: center;
-  gap: 12px; /* Espaçamento entre skills */
-  margin-bottom: 30px;
+  gap: 15px;
+  margin-bottom: 40px;
   padding: 0 20px;
-  max-width: 700px;
 }
 
 .skill-item {
-  flex: 0 1 auto; /* Não cresce, apenas encolhe se precisar */
-  max-width: 150px; /* Mantém limite de largura */
-  background: rgba(255, 255, 255, 0.05);
-  padding: 12px 15px;
-  border-radius: 10px;
-  text-align: center;
+  background: var(--glass-bg);
+  padding: 12px 24px;
+  border-radius: 100px;
   color: #fff;
   font-weight: 600;
-  backdrop-filter: blur(8px);
-  border: 1px solid rgba(0, 255, 213, 0.2);
-  box-shadow: 0 0 10px rgba(106, 0, 255, 0.1);
-  transition: transform 0.3s, box-shadow 0.3s;
+  backdrop-filter: blur(15px);
+  border: 1px solid var(--glass-border);
+  transition: all 0.4s ease;
   cursor: default;
-  line-height: 1.2; /* Ajusta o espaçamento vertical interno */
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  animation: float 3s ease-in-out infinite;
+}
+
+.skill-item i {
+  color: var(--accent-color);
+  font-size: 1.2rem;
+}
+
+.skill-item:nth-child(even) {
+  animation-delay: 0.5s;
 }
 
 .skill-item:hover {
-  transform: translateY(-5px) scale(1.05);
-  box-shadow: 0 0 20px rgba(0, 255, 213, 0.4);
+  transform: translateY(-8px) scale(1.1);
+  border-color: var(--accent-color);
+  box-shadow: 0 10px 20px rgba(0, 255, 213, 0.2);
+  background: rgba(40, 40, 42, 0.8);
+}
+
+@keyframes float {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
 }
 
 /* ==================== BOTÃO ==================== */
 .btn-ver-projetos {
   margin-top: 40px;
-  background: linear-gradient(90deg, #00ffd5, #6a00ff);
-  color: #000;
-  padding: 16px 32px;
+  background: var(--accent-blue);
+  color: #fff;
+  padding: 16px 40px;
   font-size: 1.1rem;
-  font-weight: 600;
-  border-radius: 12px;
-  border: none;
-  cursor: pointer;
-  box-shadow: 0 4px 15px rgba(0, 255, 213, 0.4);
-  transition: transform 0.3s, box-shadow 0.3s;
-  text-align: center;
+  font-weight: 700;
+  border-radius: 100px;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   display: inline-block;
-  max-width: 260px;
-  width: 100%;
+  box-shadow: 0 10px 30px rgba(10, 132, 255, 0.3);
 }
 
 .btn-ver-projetos:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 6px 20px rgba(0, 255, 213, 0.6);
+  transform: translateY(-5px) scale(1.05);
+  box-shadow: 0 15px 40px rgba(10, 132, 255, 0.5);
+  filter: brightness(1.1);
 }
 
 /* ==================== RESPONSIVO ==================== */
@@ -136,16 +166,21 @@ h2 {
   h1 {
     font-size: 2.5rem;
   }
+
   h2 {
     font-size: 1.8rem;
   }
+
   #sobre p {
     font-size: 1rem;
   }
+
   .skill-item {
-    flex-basis: 120px; /* Base para o tamanho do item */
+    flex-basis: 120px;
+    /* Base para o tamanho do item */
     font-size: 0.9rem;
   }
+
   .btn-ver-projetos {
     padding: 14px 28px;
     font-size: 1rem;
@@ -156,27 +191,32 @@ h2 {
   h1 {
     font-size: 2rem;
   }
+
   h2 {
     font-size: 1.5rem;
   }
+
   #sobre img {
     width: 140px;
     height: 140px;
   }
+
   #sobre p {
     font-size: 0.9rem;
   }
+
   .skills-list {
     gap: 10px;
   }
+
   .skill-item {
     flex-basis: 100px;
     font-size: 0.8rem;
     padding: 10px 12px;
   }
+
   .btn-ver-projetos {
     width: 90%;
     padding: 12px 24px;
   }
 }
-

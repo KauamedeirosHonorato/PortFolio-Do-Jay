@@ -1,16 +1,29 @@
 /* ==================== HEADER & NAV ==================== */
 header {
   display: flex;
-  justify-content: center; /* centraliza horizontalmente */
+  justify-content: center;
   align-items: center;
-  padding: 20px 40px;
-  background-color: rgba(15, 15, 15, 0.9);
-  -webkit-backdrop-filter: blur(5px); /* Para compatibilidade com Safari */
-  backdrop-filter: blur(5px);
-  position: -webkit-sticky; /* Para compatibilidade com Safari */
-  position: sticky; /* Padrão */
-  top: 0;
-  z-index: 10;
+  padding: 10px 20px;
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+  max-width: 800px;
+  background-color: rgba(15, 15, 15, 0.6);
+  -webkit-backdrop-filter: blur(15px);
+  backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 100px;
+  z-index: 1000;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+header:hover {
+  width: 92%;
+  background-color: rgba(20, 20, 20, 0.8);
+  border-color: rgba(255, 255, 255, 0.2);
 }
 
 nav {
@@ -28,25 +41,32 @@ nav {
 }
 
 .nav-links {
-  display: flex; /* horizontal */
-  gap: 20px; /* espaço entre itens */
+  display: flex;
+  /* horizontal */
+  gap: 20px;
+  /* espaço entre itens */
   list-style: none;
   padding: 0;
   margin: 0;
 }
 
 .nav-links a {
-  color: #ffffff;
+  color: var(--text-primary);
   font-weight: 500;
-  padding: 8px 12px;
-  border-radius: 6px;
-  text-decoration: none; /* tira o sublinhado */
-  transition: color 0.3s, background-color 0.3s;
+  padding: 10px 20px;
+  border-radius: 50px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  font-size: 0.95rem;
+}
+
+.nav-links a:hover {
+  background-color: rgba(255, 255, 255, 0.1);
 }
 
 .nav-links a:hover,
 .nav-links a.active {
-  color: #00ffd5;
+  color: var(--accent-color);
   background-color: rgba(0, 255, 213, 0.1);
 }
 
@@ -59,19 +79,26 @@ nav {
 /* ==================== RESPONSIVO ==================== */
 @media (max-width: 768px) {
   header {
-    padding: 16px 20px;
+    width: 95%;
+    top: 10px;
+    padding: 10px 15px;
+    border-radius: 20px;
   }
 
   .nav-links {
     display: none;
     flex-direction: column;
     position: absolute;
-    top: 100%;
+    top: calc(100% + 10px);
     left: 0;
     width: 100%;
-    background-color: rgba(15, 15, 15, 0.9);
+    background-color: rgba(15, 15, 15, 0.95);
+    backdrop-filter: blur(20px);
     padding: 20px;
     gap: 15px;
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
   }
 
   .nav-links.active {
@@ -80,5 +107,6 @@ nav {
 
   .menu-icon {
     display: block;
+    color: #fff;
   }
 }

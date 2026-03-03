@@ -1,87 +1,89 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>JayChouDev | Portfólio</title>
 
-    <!-- CSS -->
-    <link rel="stylesheet" href="CSS/Global.css" />
-    <link rel="stylesheet" href="CSS/MenuBar.css" />
-    <link rel="stylesheet" href="CSS/HomeStyle.css" />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>JayChouDev | Portfólio</title>
 
-    <!-- Font Awesome -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
+  <!-- CSS -->
+  <link rel="stylesheet" href="CSS/Global.css" />
+  <link rel="stylesheet" href="CSS/MenuBar.css" />
+  <link rel="stylesheet" href="CSS/HomeStyle.css" />
 
-    <!-- Fonte Poppins -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap"
-      rel="stylesheet"
-    />
-  </head>
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-  <body>
-    <!-- Menu Flutuante -->
-    <header>
-      <nav>
-        <div class="logo">
-          <a href="index.html">JayChouDev</a>
-        </div>
-        <div class="menu-icon">
-          <i class="fa-solid fa-bars"></i>
-        </div>
-        <ul class="nav-links">
-          <li><a href="index.html" class="active">Home</a></li>
-          <li><a href="HTML/Projetos.html">Projetos</a></li>
-          <li><a href="HTML/Contato.html">Contato</a></li>
-        </ul>
-      </nav>
-    </header>
+  <!-- Fonte Outfit -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet" />
+</head>
 
-    <!-- Main -->
-    <main>
-      <!-- Sobre -->
-      <section id="sobre">
-        <img src="Print-Icone/Foto-Perfil.jpg" alt="Foto do JayChouDev" />
-        <h1>JayChouDev</h1>
-        <p>
-          Sou desenvolvedor Full Stack focado em criar soluções funcionais e de
-          impacto. Atuo com HTML, CSS e JavaScript no front-end, e Java, Spring
-          Boot e SQL no back-end. Apaixonado por desafios, busco escrever código
-          limpo e evoluir constantemente na área tech.
-        </p>
-      </section>
+<body>
+  <!-- Barra de Progresso de Leitura -->
+  <div id="progress-bar"></div>
 
-      <!-- Skills -->
-      <section id="skills">
-        <h2>Minhas Skills</h2>
-        <div class="skills-list">
-          <div class="skill-item">JavaScript</div>
-          <div class="skill-item">HTML5</div>
-          <div class="skill-item">CSS3</div>
-          <div class="skill-item">Java</div>
-          <div class="skill-item">SQL</div>
-          <div class="skill-item">Git & GitHub</div>
-          <div class="skill-item">KanBan</div>
-          <div class="skill-item">Canva</div>
-          <div class="skill-item">Spring Boot</div>
-        </div>
-        <a href="./HTML/Projetos.html" class="btn-ver-projetos">Ver Projetos</a>
-      </section>
-    </main>
+  <!-- Cursor Personalizado -->
+  <div class="cursor-dot"></div>
+  <div class="cursor-outline"></div>
 
-    <!-- Footer -->
-    <footer>
-      <p>&copy; 2025 JayChouDev.</p>
-    </footer>
+  <!-- Menu Flutuante -->
+  <header>
+    <nav>
+      <div class="logo">
+        <a href="index.html">JayChouDev</a>
+      </div>
+      <div class="menu-icon">
+        <i class="fa-solid fa-bars"></i>
+      </div>
+      <ul class="nav-links">
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="HTML/Projetos.html">Projetos</a></li>
+        <li><a href="HTML/Contato.html">Contato</a></li>
+      </ul>
+    </nav>
+  </header>
 
-    <script src="menu.js"></script>
-  </body>
+  <!-- Main -->
+  <main>
+    <!-- Sobre -->
+    <section id="sobre" class="reveal">
+      <img src="Print-Icone/Foto-Perfil.jpg" alt="Foto do JayChouDev" />
+      <h1>JayChouDev</h1>
+      <p>
+        Sou desenvolvedor Full Stack focado em criar soluções funcionais e de
+        impacto. Atuo com HTML, CSS e JavaScript no front-end, e Java, Spring
+        Boot e SQL no back-end. Apaixonado por desafios, busco escrever código
+        limpo e evoluir constantemente na área tech.
+      </p>
+    </section>
+
+    <!-- Skills -->
+    <section id="skills" class="reveal">
+      <h2>Minhas Skills</h2>
+      <div class="skills-list">
+        <div class="skill-item"><i class="fa-brands fa-js"></i> JavaScript</div>
+        <div class="skill-item"><i class="fa-brands fa-html5"></i> HTML5</div>
+        <div class="skill-item"><i class="fa-brands fa-css3-alt"></i> CSS3</div>
+        <div class="skill-item"><i class="fa-brands fa-java"></i> Java</div>
+        <div class="skill-item"><i class="fa-solid fa-database"></i> SQL</div>
+        <div class="skill-item"><i class="fa-brands fa-github"></i> Git & GitHub</div>
+        <div class="skill-item"><i class="fa-solid fa-layer-group"></i> KanBan</div>
+        <div class="skill-item"><i class="fa-solid fa-palette"></i> Canva</div>
+        <div class="skill-item"><i class="fa-solid fa-leaf"></i> Spring Boot</div>
+      </div>
+      <a href="./HTML/Projetos.html" class="btn-ver-projetos">Ver Projetos</a>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2026 JayChouDev.</p>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+
 </html>

@@ -3,22 +3,24 @@ body::before {
   content: "";
   position: fixed;
   inset: 0;
-  background: radial-gradient(circle at 20% 20%, #6a00ff30, transparent),
-    radial-gradient(circle at 80% 80%, #00ffd530, transparent);
+  background:
+    radial-gradient(circle at 10% 10%, rgba(106, 0, 255, 0.15), transparent 40%),
+    radial-gradient(circle at 90% 90%, rgba(0, 255, 213, 0.15), transparent 40%),
+    radial-gradient(circle at 50% 50%, rgba(10, 132, 255, 0.05), transparent 60%);
   background-repeat: no-repeat;
-  background-size: 50% 50%;
-  animation: moveBackground 25s linear infinite;
+  background-size: 100% 100%;
+  animation: moveBackground 20s ease-in-out infinite alternate;
   z-index: -1;
-  filter: blur(80px);
+  filter: blur(100px);
 }
 
 @keyframes moveBackground {
-  0%,
-  100% {
-    background-position: left top, right bottom;
+  0% {
+    transform: scale(1);
   }
-  50% {
-    background-position: center center, center center;
+
+  100% {
+    transform: scale(1.1);
   }
 }
 
@@ -48,35 +50,41 @@ body::before {
 
 /* Card */
 .mini-card {
-  background: rgba(29, 29, 31, 0.7); /* Cor de card do dark mode da Apple */
-  border-radius: 20px;
-  padding: 18px;
-  -webkit-backdrop-filter: blur(20px); /* Para compatibilidade com Safari */
-  backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  transition: transform 0.3s ease, border-color 0.3s ease;
+  background: var(--glass-bg);
+  border-radius: 24px;
+  padding: 20px;
+  -webkit-backdrop-filter: blur(25px);
+  backdrop-filter: blur(25px);
+  border: 1px solid var(--glass-border);
+  transition: border-color 0.4s ease, background 0.4s ease, box-shadow 0.4s ease;
+  /* Transform handled by JS for tilt */
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
-  overflow: hidden; /* Garante que a imagem não ultrapasse o card no zoom */
-  will-change: transform; /* Otimização de performance para a animação */
+  overflow: hidden;
+  will-change: transform, border-color, box-shadow;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
 }
 
 .mini-card:hover {
-  transform: translateY(-5px) scale(1.02);
-  border-color: rgba(255, 255, 255, 0.3);
+  /* transform handled by main.js */
+  border-color: rgba(255, 255, 255, 0.4);
+  background: rgba(40, 40, 42, 0.8);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
 }
 
 .mini-card:hover img {
-  transform: scale(1.05);
+  transform: scale(1.08) translateY(-5px);
+  filter: brightness(1.1);
 }
 
 .mini-card img {
   width: 100%;
   height: 150px;
   object-fit: cover;
-  border-radius: 12px; /* Cantos mais arredondados */
+  border-radius: 12px;
+  /* Cantos mais arredondados */
   margin-bottom: 12px;
   transition: transform 0.4s ease, filter 0.3s ease;
 }
@@ -85,12 +93,15 @@ body::before {
   font-size: 1.2rem;
   margin-bottom: 6px;
 }
+
 .mini-card p {
   font-size: 0.9rem;
   margin-bottom: 12px;
   color: #ccc;
-  flex-grow: 1; /* Garante que o botão fique alinhado na base */
+  flex-grow: 1;
+  /* Garante que o botão fique alinhado na base */
 }
+
 .mini-card .destaque {
   color: #e5e5e7;
   font-weight: 600;
@@ -105,33 +116,79 @@ body::before {
 }
 
 .btn {
-  flex: 1; /* Faz os botões ocuparem o espaço igualmente */
-  background: #0a84ff; /* Cor de destaque da Apple */
+  flex: 1;
+  background: var(--accent-blue);
   color: #fff;
-  padding: 10px 22px;
-  border-radius: 50px; /* Estilo "pílula" */
+  padding: 12px 22px;
+  border-radius: 100px;
   font-weight: 600;
-  transition: all 0.3s ease;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   border: none;
   cursor: pointer;
   text-align: center;
   font-size: 0.9rem;
+  position: relative;
+  overflow: hidden;
 }
 
 .btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px rgba(10, 132, 255, 0.5);
   filter: brightness(1.1);
-  transform: scale(1.03);
 }
 
 /* Botão secundário (README) */
 .btn.btn-secondary {
-  background: rgba(255, 255, 255, 0.15);
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
 }
 
 .btn.btn-secondary:hover {
-  background: rgba(255, 255, 255, 0.25);
-  border-color: rgba(255, 255, 255, 0.4);
+  background: rgba(255, 255, 255, 0.15);
+  border-color: rgba(255, 255, 255, 0.3);
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
+}
+
+/* Entry Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Staggered delay for cards */
+.mini-card:nth-child(1) {
+  animation-delay: 0.1s;
+}
+
+.mini-card:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.mini-card:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+.mini-card:nth-child(4) {
+  animation-delay: 0.4s;
+}
+
+.mini-card:nth-child(5) {
+  animation-delay: 0.5s;
+}
+
+.mini-card:nth-child(6) {
+  animation-delay: 0.6s;
+}
+
+.mini-card:nth-child(7) {
+  animation-delay: 0.7s;
 }
 
 /* ==================== MODAL README ==================== */
@@ -139,7 +196,8 @@ body::before {
   position: fixed;
   inset: 0;
   background: rgba(0, 0, 0, 0.7);
-  -webkit-backdrop-filter: blur(10px); /* Para compatibilidade com Safari */
+  -webkit-backdrop-filter: blur(10px);
+  /* Para compatibilidade com Safari */
   backdrop-filter: blur(10px);
   z-index: 1000;
   display: flex;
@@ -208,12 +266,15 @@ body::before {
   .grade-projetos {
     grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
   }
+
   .mini-card img {
     height: 180px;
   }
+
   .mini-card h3 {
     font-size: 1.3rem;
   }
+
   .mini-card p {
     font-size: 1rem;
   }
@@ -223,6 +284,7 @@ body::before {
   .grade-projetos {
     gap: 20px;
   }
+
   #projetos {
     padding: 60px 20px;
   }
@@ -233,18 +295,23 @@ body::before {
     grid-template-columns: 1fr;
     gap: 15px;
   }
+
   .container-principal h2 {
     font-size: 2rem;
   }
+
   .mini-card img {
     height: 150px;
   }
+
   .mini-card h3 {
     font-size: 1.1rem;
   }
+
   .mini-card p {
     font-size: 0.9rem;
   }
+
   .btn {
     padding: 8px 18px;
     font-size: 0.8rem;
@@ -255,18 +322,21 @@ body::before {
   #projetos {
     padding: 40px 15px;
   }
+
   .container-principal h2 {
     font-size: 1.8rem;
     margin-bottom: 30px;
   }
+
   .mini-card img {
     height: 130px;
   }
+
   .mini-card h3 {
     font-size: 1rem;
   }
+
   .mini-card p {
     font-size: 0.85rem;
   }
 }
-
